@@ -4,9 +4,9 @@ days, remainder = divmod(seconds, 86400)
 hours, remainder = divmod(remainder, 3600)
 minutes, seconds = divmod(remainder, 60)
 
-if days == 1:
+if days % 10 == 1 and days % 100 != 11:
     day_word = "день"
-elif 1 < days < 5:
+elif 2 <= days % 10 <= 4 and (days % 100 < 10 or days % 100 >= 20):
     day_word = "дні"
 else:
     day_word = "днів"
